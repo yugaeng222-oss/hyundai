@@ -1,0 +1,687 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(font.css);
+
+
+/* 기본 초기화 */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+body { background-color: #fff; color: #333; }
+
+
+.section1{background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url("../images/hero.png")no-repeat center/cover;
+min-height: 100vh; /* 화면 전체를 채우도록 설정 */
+position: relative;}
+/* 헤더 */
+header {
+    color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav ul li { font-family: "Markazi Text", serif;}
+
+.sliver_logo {position: absolute;top: 15%;left: 48%;height: 60px;}
+.sliver_logo img{width: auto;}
+.menu { display: flex; list-style: none; gap: 30px; }
+
+/* 메인 비주얼 */
+.main-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.visual-text{font-family: "Markazi Text", serif;text-align: left;top:52%;left:5%;position: absolute;}
+.visual-text span{font-size: 25px;font-weight: 400;font-family: 'Hamlet',serif;}
+.visual-text p{font-size: 15px;font-weight: 300;Font-family: 'Hamlet',serif;}
+.main-visual h1 { font-size: 130px; letter-spacing: -1px;font-family: "Markazi Text", serif; font-weight: bold; }
+
+/* 모델 카드 섹션 */
+.best-model { padding: 50px 10%; text-align: center; }
+.best-model h2 {font-family: "Markazi Text", serif; font-weight: 800;font-size: 30px;}
+.best-model h3 {font-family: "Pretendard", serif; font-weight: 500;}
+.filter-tabs { margin-top: 30px;margin-bottom: 30px; border-bottom: 1px solid #E7E8E9;}
+.filter-tabs button { background: none; border: none; padding: 10px 20px; cursor: pointer; color: #888; font-size: 12px;}
+.filter-tabs button.active { color: #000; font-weight: bold; border-bottom: 2px solid #000; }
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.model-card {
+    border: 1px solid #f0f0f0; /* 테두리를 아주 연하게! */
+    padding: 30px 20px;
+    border-radius: 15px; /* 조금 더 둥글게 */
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05); /* 그림자를 아주 은은하게 */
+}
+
+/* 제목 아래 보조 설명 */
+.sub-title {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* 핵심! 왼쪽/오른쪽 정렬하기 */
+.spec-list {
+    margin: 20px 0;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between; /* 양 끝으로 밀어내기 */
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.spec-item span:first-child { color: #333; font-weight: bold; } /* 항목 이름 */
+.spec-item span:last-child { color: #666; } /* 수치 데이터
+/* 스펙 글자 크기 조절 */
+
+.spec p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+.model-card img { width: 100%; margin: 20px 0; }
+
+.small{font-size: 9px;color: #727A80;margin: 0 auto;margin-top: 30px;}
+
+.price { font-weight: bold; font-size: 20px; margin: 20px 0; }
+.btns { display: flex; gap: 10px; justify-content: center; }
+.btn-dark { background: #000; color: #fff; border: none; padding: 10px 20px; cursor: pointer; }
+.btn-outline { background: #fff; border: 1px solid #000; padding: 10px 20px; cursor: pointer; }
+
+.section3 {max-width: 100%;min-height: 100vh;box-sizing: border-box;}
+
+.wide-container {
+   max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.wide-card {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* 이미지가 튀어나가지 않게 */
+}
+
+/* 배경 이미지 설정 */
+.wide-card .bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease; /* 마우스 올리면 커지는 효과 */
+}
+
+.wide-card:hover .bg-image img {
+    transform: scale(1.1);
+}
+
+/* 검은색 그라데이션 덮개 */
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.top-info{ text-align: right;}
+.top-info h2 { font-size: 40px; font-weight: bold; letter-spacing: 2px; }
+.top-info span { font-size: 18px; opacity: 0.8;margin-bottom: 20px; }
+
+.bottom-info {
+    display: flex;
+    justify-content: center; /* 가운데로 모으기 */
+    align-items: center;
+    gap: 0; 
+}
+.info-item {
+    padding: 0 40px; /* 줄과 글자 사이의 넉넉한 간격 */
+    position: relative; /* 줄을 세우기 위한 기준점 */
+}
+.info-item p { font-size: 14px; opacity: 0.7; margin-bottom: 5px; }
+.info-item strong { font-size: 20px; }
+.info-item + .info-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* 살짝 투명한 흰색 선 */
+}
+.catalog-btn {
+    margin-left: auto; /* 버튼만 오른쪽 끝으로 */
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.catalog-btn:hover { background: #000; color: #fff; }
+
+/* 갤러리 부분은 기존 유지 */
+.gallery-part { padding: 100px 10%; text-align: center; }
+.gallery-header h2{font-family: "Markazi Text", serif;font-size: 30px;font-weight: 800;margin-bottom: 10px;}
+.gallery-header p{font-size: 12px;margin-bottom: 30px;}
+
+.gallery-container
+    {display: flex;
+    gap: 20px; /* 큰 이미지와 작은 이미지들 사이 간격 */
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;}
+
+
+.main-img {
+    flex: 1; /* 2배 넓게 차지 */
+}
+
+.main-img img {
+    width: 100%;
+    height: 400px; /* 브랜드 스토리와 높이를 맞추면 예뻐요 */
+    object-fit: cover;
+}
+
+/* ★ 핵심: 오른쪽 작은 이미지 4개를 2x2로 배치 */
+.sub-imgs {
+    flex: 1; /* 1배 차지 */
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 가로 2줄 */
+    grid-template-rows: repeat(2, 1fr);    /* 세로 2줄 */
+    gap: 15px; /* 이미지들 사이 간격 */
+}
+
+.img-box img {
+    width: auto;
+    height: 125px; /* (큰 이미지 높이 - 간격) / 2 계산값 */
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img-box img:hover {
+    filter: brightness(0.8); /* 마우스 올리면 살짝 어둡게 */
+}
+
+
+.brand-story-part {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('../images/brand_bg.png') no-repeat center/cover fixed; /* 배경 고정 효과 */
+    color: #fff;
+}
+
+.story-overlay {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 0 10%;
+}
+
+.story-text h3 {
+    font-size: 30px;
+    font-family: "Markazi Text", serif;
+    margin-bottom: 20px;
+    font-weight: 800; }
+
+.story-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.story-text span { font-size: 14px; opacity: 0.7; }
+
+.story-imgs { display: flex; gap: 15px; }
+.story-imgs img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.story-text, .story-imgs {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out; /* 1초 동안 부드럽게 변함 */
+}
+
+/* 메인 이미지 페이드 효과용 */
+.main-img img {
+    transition: opacity 0.3s ease;
+}
+
+.section5 {
+    padding: 100px 5%;
+    background-color: #f6f6f6; /* 아주 연한 회색 배경 */
+}
+
+.event-container {
+    display: flex;
+    gap: 50px;
+}
+
+/* 왼쪽 소개 영역 */
+.event-intro {
+    flex: 0 0 250px; /* 너비 고정 */
+    text-align: left;
+}
+
+.event-container .event-intro h2 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "Markazi Text",serif;
+    margin-bottom: 20px;
+}
+
+.event-intro p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 오른쪽 카드 영역 */
+.event-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* 카드가 많아지면 옆으로 스크롤 가능 */
+    padding-bottom: 20px;
+}
+
+.event-card {
+    flex: 0 0 350px; /* 카드 너비 고정 */
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px); /* 마우스 올리면 슥 올라감 */
+}
+
+.event-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.event-txt {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.event-txt h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+}
+
+.event-txt p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.event-txt span {
+    display: block;
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+.more-btn {
+    padding: 8px 20px;
+    background: none;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.more-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.footer {
+    background-color: #1c1c1b;
+    color: #888;
+    padding: 60px 10% 40px;
+    font-size: 13px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-links .link-group {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.footer-links a.bold {
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-links .customer-center {
+    margin-top: 20px;
+    color: #bbb;
+}
+
+.footer-links .copyright {
+    margin-top: 5px;
+    font-size: 11px;
+    color: #666;
+}
+
+/* SNS 및 패밀리사이트 */
+.sns-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+}
+
+.family-site {
+    background: none;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 5px 10px;
+    width: 150px;
+}
+
+/* 하단 인증 마크 영역 */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.award-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.award-item img {
+    filter: grayscale(1) brightness(0.7); /* 로고들을 무채색으로 차분하게 */
+    width: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    /* 1. 네비게이션 숨기기 및 헤더 조정 */
+    body, html {
+    overflow-x: hidden; /* 가로로 넘치는 건 무조건 숨김 */
+    width: 100%;
+}   
+
+    header nav {
+        display: none; 
+    }
+    header {
+        padding: 20px; /* 모바일에서 여백 줄임 */ height: 60px;
+        display: flex;justify-content: space-between; align-items: center;
+    }
+    .sliver_logo {
+       position: static; /* ★ absolute/relative의 위치 계산을 아예 무시하고 flex 흐름에 맡김 */
+        height: auto;     /* ★ 고정 높이 10px 대신 이미지 크기에 맞게 */
+        display: flex;    /* 로고 박스 자체도 flex로 만들어서 내부 이미지 정렬 */
+        align-items: center;
+    }
+    .sliver_logo img{
+   width: 80px;     /* 가로 크기를 px로 고정하는 게 정렬 잡기 더 편해 */
+        height: auto;     /* 비율 유지 */
+        display: block;   /* 이미지 하단 미세한 공백 제거 */
+    }
+
+    /* 2. 배경 이미지 변경 및 높이 조절 */
+    .section1 {
+        background: url("../images/mobile_bg.png") no-repeat center/cover;
+        height: 100vh; /* 모바일에서도 꽉 차게 */
+    }
+
+    /* 3. 메인 비주얼 글자 중앙 정렬 (핵심!) */
+    .visual-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 정확히 가운데 배치 */
+        text-align: center; /* 글자도 가운데 정렬 */
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .visual-text span {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .visual-text p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 40px; /* HYUNDAI 글자와의 간격 */
+    }
+
+    /* 4. 큰 HYUNDAI 글자 위치 조정 */
+    .visual-text h1 {
+        font-size: 70px; /* 모바일에 맞게 크기 축소 */
+        letter-spacing: 5px; /* 글자 간격 넓히기 */
+        position: relative;
+        bottom: -150px; /* 레퍼런스처럼 화면 하단으로 밀기 (값 조절 필요) */
+    }
+
+    /* 기본 상태: 투명하고 20px 아래에 위치 */
+.visual-text span, 
+.visual-text p, 
+.visual-text h1 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out; /* 0.8초 동안 부드럽게 */
+}
+
+/* 애니메이션이 실행될 때 붙을 클래스 */
+.visual-text.active span,
+.visual-text.active p,
+.visual-text.active h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 나타나는 순서에 차이를 줘서 더 고급스럽게 (딜레이) */
+.visual-text.active span { transition-delay: 0.2s; }
+.visual-text.active p    { transition-delay: 0.5s; }
+.visual-text.active h1   { transition-delay: 0.8s; }
+    /* BEST MODEL 카드 3개 나열된 걸 1줄로 바꾸기 */
+    .card-container {
+        grid-template-columns: 1fr; 
+    }
+
+    /* 갤러리 영역 (큰 사진, 작은 사진) 세로로 나열하기 */
+    .gallery-container {
+        flex-direction: column;
+    }
+
+    /* 이벤트 리스트 세로로 나열하기 */
+    .event-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .event-list {
+        flex-direction: column;
+        overflow-x: hidden; /* 가로 스크롤 없애기 */
+    }
+
+    .section3 {
+        min-height: auto;
+        background: url(../images/section3_mb.png) no-repeat center/cover;
+    }
+    
+    .bg-image{display: none;}
+
+    .wide-card {
+        height: 600px; /* 모바일에서 보기 적당한 높이로 고정 */
+    }
+
+    /* 오버레이: 요소들을 위아래로 배치 */
+    .card-overlay {
+        padding: 40px 20px;
+        justify-content: space-between; /* 상단 제목 <-> 하단 정보 분리 */
+    }
+
+    /* 상단 제목 영역 중앙 정렬 */
+    .top-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .top-info h2 {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+    .top-info span {
+        font-size: 16px;
+    }
+
+    /* 카탈로그 버튼: 제목 바로 아래로 이동 */
+    .catalog-btn {
+        margin: 330px auto 0; /* 중앙 정렬 */
+        display: flex;
+        width: 120px;
+        padding: 8px 0;
+        justify-content: center;
+        
+    }
+
+    /* 하단 스펙 정보 영역: 가로 정렬 유지 혹은 세로 정렬 */
+    .bottom-info {
+        flex-direction: row; /* 가로로 두고 싶다면 row, 너무 좁으면 column */
+        flex-wrap: wrap; /* 좁으면 자동 줄바꿈 */
+        justify-content: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.4); /* 글자 가독성을 위해 살짝 배경 추가 */
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+
+    .info-item {
+        padding: 0 15px;
+        flex: 1 1 30%; /* 3개가 나란히 배치되도록 설정 */
+        border-left: none !important; /* 구분선 제거 */
+        text-align: center;
+    }
+
+    .info-item p {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .info-item strong {
+        font-size: 16px;
+        white-space: nowrap; /* 숫자 줄바꿈 방지 */
+    }
+
+    .brand-story-part {
+        height: auto; /* 고정 높이 400px 해제 */
+        padding: 50px 20px;
+    }
+
+    /* 2. 가로 배치를 세로 배치로 변경 */
+    .story-overlay {
+        flex-direction: column; /* 글자 아래 이미지 오도록 */
+        gap: 30px; /* 너무 멀었던 간격 좁히기 */
+        text-align: center; /* 모바일은 중앙 정렬이 깔끔해 */
+    }
+
+    /* 3. 글자 크기 및 줄바꿈 조정 */
+    .story-text h3 {
+        font-size: 28px;
+    }
+    .story-text p {
+        font-size: 14px;
+        word-break: keep-all; /* 단어 단위 줄바꿈으로 가독성 UP */
+    }
+
+    /* 4. 이미지들이 화면 밖으로 나가지 않게 조절 */
+    .story-imgs {
+        justify-content: center; /* 이미지들 가운데 정렬 */
+        flex-wrap: wrap; /* 자리가 부족하면 아래로 내려가게 */
+        gap: 10px;
+    }
+
+    .story-imgs img {
+        width: 30%; /* 3장이 한 줄에 딱 맞게 (여백 포함) */
+        min-width: 80px; /* 너무 작아지지 않게 방어선 구축 */
+        height: 120px; /* 높이도 모바일에 맞게 축소 */
+    }
+}
+
+/* --- CSS 상단이나 미디어 쿼리 바깥에 넣어주세요 --- */
+
+/* 1. 처음엔 안 보이게 설정 */
+.visual-text span, 
+.visual-text p, 
+.visual-text h1 {
+    opacity: 0;
+    transform: translateY(50px); /* 30px보다 50px이 더 드라마틱함 */
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* 고급진 가속도 느낌 */
+}
+
+/* 2. active 클래스가 붙으면 나타남 */
+.visual-text.active span,
+.visual-text.active p,
+.visual-text.active h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. 순차적으로 터지는 딜레이 (고급짐의 핵심) */
+.visual-text.active span { transition-delay: 0.2s; }
+.visual-text.active p    { transition-delay: 0.4s; }
+.visual-text.active h1   { transition-delay: 0.6s; }
+
+/* 4. HYUNDAI 글자에 살짝 광택 효과 (선택사항) */
+.visual-text h1 {
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
